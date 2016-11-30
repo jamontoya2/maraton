@@ -23,7 +23,7 @@ class Controller
   	all_task.each do |item|
       answer = @view.show_questions(item.question)  
       @view.show_message(answer)  
-        if item.answer == answer
+        if item.answer.upcase == answer.upcase
           ok += 1      
         else
           no += 1
@@ -35,7 +35,7 @@ class Controller
 
 end
 
-# input = ARGV
+input = ARGV
 Controller.new(input)
 
     
